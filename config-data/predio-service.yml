@@ -1,0 +1,36 @@
+#Application Configuration
+server:
+  port: 8091
+  error:
+    include-message: always
+    include-binding-errors: always
+    # To See H2 Console in Browser:
+    # http://localhost:8091/h2-console
+    # Enabling H2 Console
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://138.121.203.6:5432/udc_predio
+    username: postgres
+    password: C1nt3l12020
+
+  # ===============================
+  # JPA / HIBERNATE
+  # ===============================
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database: postgresql
+    generate-ddl: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        show_sql: true
+        use_sql_comments: false
+        format_sql: false
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
