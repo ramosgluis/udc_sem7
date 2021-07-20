@@ -40,8 +40,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8099/eureka
 
+# Abra la interfaz de monitoreo
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
